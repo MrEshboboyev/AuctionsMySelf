@@ -11,5 +11,8 @@ namespace Auctions.Data
         {
         }
 
+        public DbSet<Listing> Listings { get; set; }
+        public DbSet<Comment> Comments { get; set; }
+        public DbSet<Bid> Bids { get; set; }
     }
 }
