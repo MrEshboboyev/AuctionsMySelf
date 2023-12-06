@@ -1,6 +1,9 @@
-﻿namespace Auctions.Data.Services
+﻿using Auctions.Models;
+
+namespace Auctions.Data.Services
 {
-    public class IListingService
+    public interface IListingService
     {
+        IQueryable<Listing> GetAll();
     }
 }
