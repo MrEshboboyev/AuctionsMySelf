@@ -1,4 +1,5 @@
 using Auctions.Data;
+using Auctions.Data.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +14,10 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
+
+// AddScoped() => This is Service Lifetime
+// so'rovlarni qayta ishlashga ma'sul bo'lgan servis namunalarini yaratish uchun javobgar
+builder.Services.AddScoped<IListingService, ListingService>();
 
 var app = builder.Build();
 
